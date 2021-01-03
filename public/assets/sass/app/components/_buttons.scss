@@ -1,0 +1,51 @@
+.btn{
+    border-radius: 65px;
+    width: 256px;
+    height: 63px;
+    padding: 1rem;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    color: $base-blue !important;
+    text-transform: uppercase;
+    box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+    border: solid 3px transparent;
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(301.92deg, #00D1D1 0.85%, #127AE5 113.38%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    box-shadow: 2px 1000px 1px #fff inset;
+    transition: all 0.7s;
+
+    @include breakpoint(mobile){
+        font-size: 12px;
+        line-height: 14px;
+        width: 256px;
+        height: 50px;
+        padding: .5rem;
+    }
+
+    &:hover{
+        background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(-301.92deg, #00D1D1 0.85%, #127AE5 113.38%);
+    }
+}
+
+#toggle-password, .toggle-password{
+    border: none;
+    background-color: transparent;
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.visibility{
+    svg{
+        path{
+            fill: $base-green;
+        }
+    }
+}
+
+.input-file input[type=file]+label.btn{
+    color: $base-blue !important;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>{{ 'Recovery password'|trans }}</title>
+    <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+    <link rel="icon" href="{{ asset('assets/img/favicon.ico') }}" type="image/x-icon"/>
+
+    <!-- Fonts and icons -->
+    <script src="{{ asset('assets/js/plugin/webfont/webfont.min.js') }}"></script>
+    <script>
+        WebFont.load({
+            google: {"families":["Montserrat:100,200,300,400,500,600,700,800,900"]},
+            custom: {"families":["Flaticon", "LineAwesome"], urls: ['{{ asset('assets/css/fonts.css') }}']},
+            active: function() {
+                sessionStorage.fonts = true;
+            }
+        });
+    </script>
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/ready.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/demo.css') }}">
+</head>
+<body class="login">
+<div class="wrapper wrapper-login">
+    {% include 'partial/alert.html.twig' %}
+    <div class="container container-login animated fadeIn">
+        <h3 class="text-center">{{ 'Recovery password'|trans }}</h3>
+
+        <form method="post" action="{{ path('app_email_verif') }}">
+            <div class="form-group">
+                <div>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="username-addon">@</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder=" {{ 'Please enter your email'|trans }}" aria-label="username" aria-describedby="username-addon" id="username" name="email" required="">
+                    </div>
+                </div>
+                <div class="ml-2 mt-3">
+                    {{ 'language_preferences'|trans }}
+                    {% if app.request.locale != 'fr' %}
+                        <a href="/app/fr{{ app.request.requestUri|slice(4) }}" class="lang-switcher btn btn-link">FR</a>
+                    {% else %}
+                        <a href="/app{{ app.request.requestUri|slice(7) }}" class="lang-switcher btn btn-link">EN</a>
+                    {% endif %}
+                </div>
+                <center>
+                    <button type="submit" class="btn btn-primary mt-3">
+                        {{ 'Send email'|trans }}
+                    </button>
+                </center>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="{{ asset('assets/js/core/jquery.3.2.1.min.js') }}"></script>
+<script src="{{ asset('assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js') }}"></script>
+<script src="{{ asset('assets/js/core/popper.min.js') }}"></script>
+<script src="{{ asset('assets/js/core/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/js/ready.js') }}"></script>
+</body>
+</html>

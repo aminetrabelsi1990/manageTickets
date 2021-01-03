@@ -1,0 +1,9 @@
+        {% for label, messages in app.flashes %}
+
+            <div class="alert alert-{{ label }} alert-dismissible fade show" role="alert">
+                {% for message in messages %}
+                    {{ message | raw }}
+                {% endfor %}
+                <a href="" class="mr-auto text-white" data-dismiss="alert" aria-label="Close" style="float: right"><b>X</b></a>
+            </div>
+        {% endfor %}

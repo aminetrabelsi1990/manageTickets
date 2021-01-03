@@ -1,0 +1,161 @@
+
+/*------------------------------------------------------------------
+[Fonts] 
+*/
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap");
+
+/*------------------------------------------------------------------
+[Colors] 
+*/
+$primary-color: linear-gradient(301.92deg, #00D1D1 0.85%, #127AE5 113.38%);
+$base-blue: #127AE5;
+$base-green: #00D1D1;
+$base-grey: #686868;
+
+/*------------------------------------------------------------------
+[Reset] 
+*/
+body{
+    font-family: 'Raleway', sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 18px;
+}
+
+h1, h2, h3, h4, h5, p, a{
+    font-family: 'Raleway', sans-serif;
+}
+
+p{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: $base-grey;
+
+    @include breakpoint(tablet){
+        font-size: 22px;
+        line-height: 26px;
+    }
+
+    @include breakpoint(mobile){
+        font-size: 12px;
+        line-height: 14px;
+    }
+}
+
+.form-control, label{
+    color: #000000 !important;
+}
+
+/*------------------------------------------------------------------
+[App] 
+*/
+.navbar{
+    background-color: #ffffff;
+}
+
+.main-wrapper{
+    background-image: $primary-color;
+}
+
+.blue_wrapper{
+    color: #ffffff;
+    padding: 29px 0 27px;
+
+    p{
+        color: #ffffff;
+    }
+}
+
+.white_wrapper{
+    background-color: #ffffff;
+    box-shadow: 2px 0px 4px rgba(0, 0, 0, 0.08);
+    border-radius: 56px 56px 0 0;
+    padding: 66px 120px;
+
+    @include breakpoint(tablet){
+        padding: 66px 50px;
+    }
+
+    @include breakpoint(mobile){
+        padding: 66px 10px 24px;
+    }
+
+    @include breakpoint(mobile-s){
+        padding: 30px 10px 20px;
+        border-radius: 30px 30px 0 0;
+    }
+}
+
+.app-title{
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 35px;
+    text-align: center;
+    margin: 0 415px 17px 412px;
+
+    @include breakpoint(tablet){
+        margin: 0 140px 17px;
+        font-weight: 800;
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    @include breakpoint(mobile){
+        font-size: 14px;
+        line-height: 16px;
+        margin: 0 40px 17px;
+    }
+}
+
+.app-intro{
+    font-family: 'Lato', sans-serif;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    padding: 0 53px;
+
+    @include breakpoint(tablet){
+        margin: 0 100px;
+        padding: 0;
+    }
+
+    @include breakpoint(mobile){
+        font-size: 12px;
+        line-height: 14px;
+        margin: 0 42px;
+    }
+}
+
+.tablet_content{
+    display: none;
+
+    @include breakpoint(tablet){
+        display: block;
+    }
+
+}
+
+.legal_page{
+    @include breakpoint(mobile){
+        padding: 66px 42px 24px;
+    }
+}
+
+.red-wrapper{
+    background-image: linear-gradient(90deg, #E5125E 0%, #FFA15C 100%);  
+}
+
+.error{
+    padding: 50px;
+    margin: 10% auto;
+    text-align: center;
+}
+
+.page-item.active .page-link {
+    background-color: $base-green;
+    border-color: $base-green;
+}

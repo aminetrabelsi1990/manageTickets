@@ -1,0 +1,256 @@
+.info_section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include breakpoint(tablet){
+        justify-content: center;
+    }
+
+    img.profile_photo{
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 2px solid $base-green;
+        margin-right: 70px;
+
+        @include breakpoint(tablet){
+            width: 180px;
+            height: 180px;
+            margin-right: 50px;
+        }
+
+        @include breakpoint(mobile){
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+        }
+    }
+
+    .info{
+        margin-right: 116px;
+
+        @include breakpoint(tablet){
+            margin-right: 7px;
+        }
+
+        span{
+            margin-right: 39px;
+
+            @include breakpoint(mobile){
+                margin-right: 9px;
+            }
+
+            img{
+                @include breakpoint(mobile){
+                    width: 12px;
+                }
+            }
+        }
+
+        a{
+            font-family: 'Lato', sans-serif;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: 24px;
+            color: #000000;
+
+            @include breakpoint(mobile){
+                font-size: 12px;
+                line-height: 14px;
+            }
+        }
+
+        h5{
+            @include breakpoint(mobile){
+                font-size: 12px;
+                line-height: 14px;
+            }
+        }
+
+        .form_group{
+            margin-right: 0;
+
+            .select_phone ~ .input_form{
+                width: 232px;
+                font-size: 15px;
+
+                @include breakpoint(mobile){
+                    width: 223px !important;
+                    font-size: 12px;
+                    line-height: 14px;
+                    margin-bottom: 25px !important;
+                }
+
+                @include breakpoint(mobile-s){
+                    width: 199px !important;
+                }
+            }
+
+            .select_phone{
+                @include breakpoint(mobile){
+                    width: 83px !important;
+                    padding-left: 18px;
+                    margin-bottom: 25px !important;
+                }
+            }
+
+            .input_form:-internal-autofill-selected, .input_form:active , .input_form:focus{
+                background-color: #ffffff !important;
+            }
+            .select_form{
+                font-size: 15px;
+
+                @include breakpoint(mobile){
+                    font-size: 11px;
+                    line-height: 14px;
+                }
+            }
+        }
+    }
+}
+
+.setting_section{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+
+    p{
+        margin: 52px 0 20px;
+        margin-left: -113px ;
+
+        @include breakpoint(tablet){
+            margin: 52px 18px 20px 0;
+        }
+
+        @include breakpoint(mobile){
+            margin: 20px 18px 20px 0;
+        }
+    }
+}
+
+.logout_link{
+    margin-bottom: 79px;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 23px;
+    color: $base-blue;
+
+    @include breakpoint(tablet){
+        margin-bottom: -298px;
+    }
+
+    @include breakpoint(mobile){
+        font-size: 12px;
+        line-height: 14px;
+        margin-bottom: -219px;
+        margin-left: 10px !important;
+    }
+
+    &:hover{
+        color: $base-blue;
+    }
+}
+
+.change_pass_section{
+    text-align: center;
+    margin: 64px auto 0;
+    padding-right: 11%;
+
+    @include breakpoint(tablet){
+        margin-left: 0;
+        margin-top: 50px;
+        padding-right: 0;
+    }
+
+    @include breakpoint(mobile){
+        margin-top: 25px;
+    }
+
+    p{
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 26px;
+        text-transform: uppercase;
+        color: $base-green;
+
+        @include breakpoint(mobile){
+            font-size: 12px;
+            line-height: 14px;
+        }
+        
+    }
+
+    .form_group{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        margin-right: 0;
+        width: 50%;
+        margin: auto;
+
+        @include breakpoint(tablet){
+            width: 100%;
+            align-items: center;
+        }
+
+        .input_form{
+            width: 475px;
+
+            @include breakpoint(mobile){
+                width: 300px;
+                margin-bottom: 20px;
+            }
+        }
+
+        input::placeholder{
+            font-size: 15px;
+            line-height: 18px;
+            opacity: 0.6;
+
+            @include breakpoint(mobile){
+                font-size: 12px;
+                line-height: 14px;
+            }
+        }
+    }
+
+    .button{
+        width: 50%;
+        margin: 30px auto;
+        text-align: right;
+
+        @include breakpoint(tablet){
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    .toggle-password-icon{
+        @include breakpoint(tablet){
+            top: 18%;
+        }
+
+        @include breakpoint(mobile){
+            top: 27%;
+        }
+    }
+}
+
+.profile_phone{
+    .select_phone{
+        @include breakpoint(tablet){
+            width: 120px !important;
+        }
+        
+    }
+
+    .select_phone ~ .input_form{
+        @include breakpoint(tablet){
+            width: 300px !important;
+        }
+        
+    }
+}

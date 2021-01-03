@@ -1,0 +1,241 @@
+.notification_filter{
+    color: $base-green;
+    border-bottom: 0.2px solid #00D1D1;
+    width: 723px;
+    margin: 0 auto 90px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 0;
+    font-size: 20px;
+    line-height: 23px;
+
+    @include breakpoint(tablet){
+        width: 600px;
+        margin-bottom: 70px;
+    }
+
+    @include breakpoint(mobile){
+        width: 300px;
+        font-size: 12px;
+        line-height: 14px;
+        margin-bottom: 20px;
+    }
+
+    li:hover{
+        cursor: pointer;
+    }
+
+    .active{
+        &::after{
+            content: '';
+            width: 100%;
+            height: 5px;
+            display: block;
+            background: linear-gradient(90.62deg, #127AE5 5.94%, #00D1D1 98.02%);
+            border-radius: 12px;
+
+            @include breakpoint(mobile){
+                height: 2px;
+            }
+        }
+    }
+}
+
+.message{
+    border-bottom: 0.2px solid rgba(104, 104, 104, 0.5);
+    margin-bottom: 30px;
+    transition: ease-in-out all .3s;
+    padding: 10px;
+
+    @include breakpoint(mobile){
+        margin-bottom: 15px;
+    }
+
+    &:hover{
+        box-shadow: -1px 0 4px 3px rgba(0, 0, 0, 0.08);
+        border-radius: 15px;
+    }
+
+    a:hover{
+        text-decoration: none;
+    }
+
+    a.seen{
+        .message_title h4, .message_subtitle h5{
+            color: $base-grey;
+        }
+
+        .notif_bubble{
+            background: #ffffff;
+
+            &::before{
+                content: '';
+                // width: 10px;
+                // height: 10px;
+                background: #ffffff;
+            }
+        }
+
+        .notif::after{
+            color: white;
+        }
+    }
+
+    &:last-child{
+        border: none;
+    }
+
+    .message_title, .message_subtitle{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .message_title{
+        h4{
+            font-weight: 600;
+            font-size: 22px;
+            line-height: 26px;
+            color: #000000;
+
+            @include breakpoint(mobile){
+                font-size: 12px;
+                line-height: 14px;
+            }
+        }
+
+        h6{
+            font-family: 'Lato', sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 22px;
+            color: $base-grey;
+
+            @include breakpoint(mobile){
+                font-size: 12px;
+                line-height: 14px;
+            }
+           
+        }
+    }
+
+    .message_subtitle{
+        margin-bottom: 24px;
+
+        @include breakpoint(mobile){
+            margin-bottom: 6px;
+        }
+
+        h5{
+            font-family: 'Lato', sans-serif;
+            font-style: italic;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: 24px;
+            color: #000000;
+
+            @include breakpoint(mobile){
+                font-size: 10px;
+                line-height: 12px;
+            }
+        }
+
+        h6{
+            font-family: 'Lato', sans-serif;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 22px;
+            color: $base-grey;
+
+            @include breakpoint(mobile){
+                font-size: 10px;
+                line-height: 12px;
+            }
+        }
+    }
+
+    .message_content{
+        font-family: 'Lato' , sans-serif;
+        font-weight: 300;
+        font-size: 22px;
+        line-height: 26px;
+
+        @include breakpoint(mobile){
+            font-size: 12px;
+            line-height: 14px;
+        }
+
+        p{
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+            font-size: 26px;
+            line-height: 124.8%;
+            margin-bottom: 30px;
+
+            @include breakpoint(mobile){
+                font-size: 12px;
+                line-height: 14px;
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
+
+.notif_bubble{
+    position: relative;
+
+    &::before{
+        content: '';
+        width: 10px;
+        height: 10px;
+        background: linear-gradient(90.62deg, #127AE5 5.94%, #00D1D1 98.02%);
+        border-radius: 50%;
+        position: absolute;
+        top: 7px;
+        right: 13px;
+
+        @include breakpoint(mobile){
+            top: 4px;
+        }
+    }
+}
+
+// show messages
+.message_details{
+    margin-top: 65px;
+    border: none;
+
+    @include breakpoint(mobile){
+        margin-top: 23px;
+    }
+
+    &:hover{
+        box-shadow: none;
+    }
+}
+
+.reply_link{
+    @include breakpoint(mobile){
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    span{
+        margin-right: 10px;
+
+        @include breakpoint(mobile){
+            margin-right: 7px;
+        }
+
+        img{
+            @include breakpoint(mobile){
+                width: 13px;
+            }
+        }
+    }
+
+    &:hover{
+        color: $base-blue;
+    }
+}

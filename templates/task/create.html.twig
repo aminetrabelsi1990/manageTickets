@@ -1,0 +1,98 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'create_task'|trans }} {% endblock %}
+
+{% block body %}
+    <div class="wrapper">
+        <div class="main-header">
+			<!-- Logo Header -->
+			{% include 'partial/logoheader.html.twig' %}
+			<!-- End Logo Header -->
+            {% include 'partial/navbar.html.twig' %}
+        </div>
+        {% include 'partial/sidebar.html.twig' %}
+		<div class="main-panel">
+			<div class="content">
+				<div class="container-fluid">
+					<div class="page-header">
+						<h4 class="page-title">{{ 'task'|trans }} </h4>
+						<ul class="breadcrumbs">
+							<li class="nav-home">
+								<a href="#">
+									<i class="flaticon-home"></i>
+								</a>
+							</li>
+							<li class="separator">
+								<i class="flaticon-right-arrow"></i>
+							</li>
+							<li class="nav-item">
+								<a href="#">{{ 'tasks'|trans }} </a>
+							</li>
+							<li class="separator">
+								<i class="flaticon-right-arrow"></i>
+							</li>
+							<li class="nav-item">
+								<a href="#">{{ 'New'|trans }} {{ 'task'|trans }} </a>
+							</li>
+						</ul>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="card">
+									{{ form_start(form)}}
+									<div class="card-body">
+									{# New form #}
+									<div class="form-group form-show-validation row">
+										<label for="name" class="col-lg-3 col-md-3 col-sm-4 mt-sm-2 text-right">{{ 'Name'|trans }} </label>
+										<div class="col-lg-4 col-md-9 col-sm-8">
+											<div class="input-group">
+												{{ form_widget(form.name, { 'attr': { 'class': 'form-control'}}) }}
+												<label class="text-danger">{{ form_errors(form.name)}}</label>
+											</div>
+										</div>
+									</div>
+									<div class="form-group form-show-validation row">
+										<label for="name" class="col-lg-3 col-md-3 col-sm-4 mt-sm-2 text-right">{{ 'Description'|trans }} </label>
+										<div class="col-lg-4 col-md-9 col-sm-8">
+											<div class="input-group">
+												{{ form_widget(form.description, { 'attr': { 'class': 'form-control'}}) }}
+												<label class="text-danger">{{ form_errors(form.description)}}</label>
+											</div>
+										</div>
+									</div>
+									<div class="form-group form-show-validation row">
+										<label for="name" class="col-lg-3 col-md-3 col-sm-4 mt-sm-2 text-right">{{ 'status'|trans }} </label>
+										<div class="col-lg-4 col-md-9 col-sm-8">
+											<div class="input-group">
+												{{ form_widget(form.status, { 'attr': { 'class': 'form-control'}}) }}
+												<label class="text-danger">{{ form_errors(form.status)}}</label>
+											</div>
+										</div>
+									</div>
+										<div class="form-group form-show-validation row">
+										<label for="name" class="col-lg-3 col-md-3 col-sm-4 mt-sm-2 text-right">{{ 'assigned'|trans }} </label>
+										<div class="col-lg-4 col-md-9 col-sm-8">
+											<div class="input-group">
+												{{ form_widget(form.assigned, { 'attr': { 'class': 'form-control'}}) }}
+												<label class="text-danger">{{ form_errors(form.assigned)}}</label>
+											</div>
+										</div>
+									</div>
+									<div class="card-action">
+										<div class="row">
+											<div class="col-md-12">
+												<input class="btn btn-success" type="submit" value="{{ 'create'|trans }} ">
+												<a class="btn btn-danger" href="{{ app.request.headers.get('referer') }}">{{ 'Cancel'|trans }}</a>
+											</div>										
+										</div>
+									</div>
+									{{ form_end(form)}}
+							</div>						
+        				{# end form #}
+						</div>
+					</div>
+				</div>
+            </div>			
+		</div>        
+    </div>
+{% endblock %}

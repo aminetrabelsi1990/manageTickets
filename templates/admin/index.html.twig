@@ -1,0 +1,127 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'admin_list'|trans }} {% endblock %}
+
+{% block body %}
+    <div class="wrapper">
+        <div class="main-header">
+            <!-- Logo Header -->
+            {% include 'partial/logoheader.html.twig' %}
+            <!-- End Logo Header -->
+
+            {% include 'partial/navbar.html.twig' %}
+        </div>
+
+        {% include 'partial/sidebar.html.twig' %}
+
+        
+        {# begin datatable  #}
+        <div class="main-panel">
+			<div class="content">
+				<div class="container-fluid">
+					<div class="page-header">
+						<h4 class="page-title">{{ 'manage_admins'|trans }} </h4>
+						<ul class="breadcrumbs">
+							<li class="nav-home">
+								<a href="#">
+									<i class="flaticon-home"></i>
+								</a>
+							</li>
+							<li class="separator">
+								<i class="flaticon-right-arrow"></i>
+							</li>
+							<li class="nav-item">
+								<a href="#">{{ 'administrator'|trans }}</a>
+							</li>
+							<li class="separator">
+								<i class="flaticon-right-arrow"></i>
+							</li>
+							<li class="nav-item">
+								<a href="#">{{ 'list'|trans }}</a>
+							</li>
+						</ul>
+					</div>
+					{% include 'partial/alert.html.twig' %}
+					<div class="row">
+						<div class="col-md-12">
+							<div class="card">
+								<div class="card-header">
+									<div class="d-flex align-items-center">
+										<h4 class="card-title">{{ 'admin_list'|trans }}</h4>
+                                        <a href="{{ path('app_admin_create') }}" class="btn btn-primary btn-round ml-auto">
+											<i class="la la-plus"></i>
+											{{ 'add_admin'|trans }}
+                                        </a>
+									</div>
+								</div>
+								<div class="card-body">
+
+									<div class="table-responsive">
+										<table id="add-row" class="display table table-striped table-hover" >
+											<thead>
+												<tr>
+													<th>{{ 'Email'|trans }}</th>
+                                                    <th>{{ 'First name'|trans }}</th>
+                                                    <th>{{ 'Last name'|trans }}</th>
+                                                    <th>{{ 'isDeleted'|trans }}</th>
+                                                    <th>{{ 'createdAt'|trans }}</th>
+                                                    <th>{{ 'updatedAt'|trans }}</th>
+													<th style="width: 10%">{{ 'action'|trans }}</th>
+												</tr>
+											</thead>
+											<tfoot>
+												<tr>
+													<th>{{ 'Email'|trans }}</th>
+                                                    <th>{{ 'First name'|trans }}</th>
+                                                    <th>{{ 'Last name'|trans }}</th>
+                                                    <th>{{ 'isDeleted'|trans }}</th>
+                                                    <th>{{ 'createdAt'|trans }}</th>
+                                                    <th>{{ 'updatedAt'|trans }}</th>
+													<th style="width: 10%">{{ 'action'|trans }}</th>
+												</tr>
+											</tfoot>
+											<tbody>
+												{% for admin in admins %}
+													<tr>
+														<td>{{ admin.email }}</td>	
+                                                        <td>{{ admin.firstName }}</td>
+                                                        <td>{{ admin.lastName }}</td>
+                                                        {% if admin.isDeleted == true %} 
+															<td>
+																<span class="badge badge-success">{{ 'Yes'|trans }}</span> 
+															</td>
+														{% else %} 
+															<td>
+																<span class="badge badge-danger">{{ 'No'|trans }}</span> 
+															</td>
+														{% endif %}
+                                                        <td>{{ admin.createdAt|date("d/m/Y H:i") }}</td>
+                                                        <td>{{ admin.updatedAt|date("d/m/Y H:i") }}</td>     
+														<td>
+															<div class="form-button-action">
+																<a href="{{ path('app_admin_edit', { 'id': admin.id}) }}"  data-toggle="tooltip"  class="btn btn-link btn-primary btn-lg" data-original-title="{{ 'Edit'|trans }}">
+																	<i class="la la-edit"></i>
+																</a>
+							
+																	<a href="{{ path('app_admin_delete', { 'id': admin.id}) }}" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="{{ 'remove'|trans }}">
+																		<i class="la la-times"></i>
+																	</a>
+																
+															</div>
+														</td>
+													</tr>	
+											    {% endfor %}					
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+        {# end datatable #}
+    </div>
+{% endblock %}

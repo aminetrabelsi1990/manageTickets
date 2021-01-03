@@ -1,0 +1,14 @@
+app:
+    resource: ../../src/Controller/
+    type: annotation
+    prefix:
+        en: /app
+        fr: /app/fr
+    defaults:
+        _locale: en
+    requirements:
+        _locale: en|fr
+
+kernel:
+    resource: ../../src/Kernel.php
+    type: annotation

@@ -1,0 +1,186 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'task_list'|trans }} {% endblock %}
+
+{% block body %}
+    <div class="wrapper">
+        <div class="main-header">
+            <!-- Logo Header -->
+            {% include 'partial/logoheader.html.twig' %}
+            <!-- End Logo Header -->
+
+            {% include 'partial/navbar.html.twig' %}
+        </div>
+
+        {% include 'partial/sidebar.html.twig' %}
+
+        
+        {# begin datatable  #}
+        <div class="main-panel">
+			<div class="content">
+				<div class="container-fluid">
+					<div class="page-header">
+						<h4 class="page-title">{{ 'manage_tasks'|trans }} </h4>
+						<ul class="breadcrumbs">
+							<li class="nav-home">
+								<a href="#">
+									<i class="flaticon-home"></i>
+								</a>
+							</li>
+							<li class="separator">
+								<i class="flaticon-right-arrow"></i>
+							</li>
+							<li class="nav-item">
+								<a href="#">{{ 'Task'|trans }}</a>
+							</li>
+							<li class="separator">
+								<i class="flaticon-right-arrow"></i>
+							</li>
+							<li class="nav-item">
+								<a href="#">{{ 'list'|trans }}</a>
+							</li>
+						</ul>
+					</div>
+					{% include 'partial/alert.html.twig' %}
+					<div class="row">
+						<div class="col-md-12">
+							<div class="card">
+								<div class="card-header">
+									<div class="d-flex align-items-center">
+										<h4 class="card-title">{{ 'task_list'|trans }}</h4>
+										<div class="col-lg-4 col-md-9 col-sm-8">
+											<select class="form-control input-square" id="selectProject" required="" onchange="changeProject()">
+												<option value="null">{{ 'select project'|trans }}</option>
+												{% for project in projects %}
+													<option value="{{ project.id }}" {% if app.request.get('id') == project.id  %} selected {% endif %}>{{ project.name }}</option>
+												{% endfor %}
+											</select>
+										</div>
+										{% if app.user.id == owner %}
+											<a href="{{ path('app_task_create',{ 'id': app.request.get('id') }) }}" class="btn btn-primary btn-round ml-auto">
+												<i class="la la-plus"></i>
+												{{ 'add_task'|trans }}
+											</a>
+										{% endif %}
+									</div>
+								</div>											
+								<div class="row flex-nowrap">
+									{% if app.user.id == owner %}
+										<div class="col-2">
+											<div class="card card-block"><center>{{ 'rough draft'|trans }}</center>
+												{% for task in tasks %}
+													{% if task.status == 'rough draft' %}
+														<div class="card" >
+															<div class="card-body">
+																<h6 class="card-subtitle mb-2 text-muted">{{ task.name }}</h6>
+																<p class="card-text">{{ task.description }}</p>
+																<a href="{{ path('app_task_edit', { 'project_id': app.request.get('id'), 'id': task.id }) }}" class="card-link">{{ 'edit'|trans }}</a>
+																<a href="{{ path('app_task_delete', { 'project_id': app.request.get('id'), 'id': task.id }) }}" class="card-link">{{ 'delete'|trans }}</a>
+															</div>
+														</div>
+													{% endif %}
+												{% endfor %}
+											</div>
+										</div>
+									{% endif %}
+									<div class="col-2">
+										<div class="card card-block"><center>{{ 'waiting'|trans }}</center>
+											{% for task in tasks %}
+												{% if task.status == 'waiting' %}
+													<div class="card" >
+														<div class="card-body">
+															<h6 class="card-subtitle mb-2 text-muted">{{ task.name }}</h6>
+															<p class="card-text">{{ task.description }}</p>
+															{% if app.user.id == owner %}
+																<a href="{{ path('app_task_edit', { 'project_id': app.request.get('id'), 'id': task.id }) }}" class="card-link">{{ 'edit'|trans }}</a>
+																<a href="{{ path('app_task_delete', { 'project_id': app.request.get('id'), 'id': task.id }) }}" class="card-link">{{ 'delete'|trans }}</a>
+															{% endif %}
+														</div>
+													</div>
+												{% endif %}
+											{% endfor %}
+										</div>
+									</div>
+									<div class="col-2">
+										<div class="card card-block"><center>{{ 'in progress'|trans }}</center>
+											{% for task in tasks %}
+												{% if task.status == 'in progress' %}
+													<div class="card" >
+														<div class="card-body">
+															<h6 class="card-subtitle mb-2 text-muted">{{ task.name }}</h6>
+															<p class="card-text">{{ task.description }}</p>
+															{% if app.user.id == owner %}
+																<a href="{{ path('app_task_edit', { 'project_id': app.request.get('id'), 'id': task.id }) }}" class="card-link">{{ 'edit'|trans }}</a>
+																<a href="{{ path('app_task_delete', { 'project_id': app.request.get('id'), 'id': task.id }) }}" class="card-link">{{ 'delete'|trans }}</a>
+															{% endif %}
+														</div>
+													</div>
+												{% endif %}
+											{% endfor %}
+										</div>
+									</div>
+									<div class="col-2">
+										<div class="card card-block"><center>{{ 'in validation'|trans }}</center>
+											{% for task in tasks %}
+												{% if task.status == 'in validation' %}
+													<div class="card" >
+														<div class="card-body">
+															<h6 class="card-subtitle mb-2 text-muted">{{ task.name }}</h6>
+															<p class="card-text">{{ task.description }}</p>
+															{% if app.user.id == owner %}
+																<a href="{{ path('app_task_edit', { 'project_id': app.request.get('id'), 'id': task.id }) }}" class="card-link">{{ 'edit'|trans }}</a>
+																<a href="{{ path('app_task_delete', { 'project_id': app.request.get('id'), 'id': task.id }) }}" class="card-link">{{ 'delete'|trans }}</a>
+															{% endif %}
+														</div>
+													</div>
+												{% endif %}
+											{% endfor %}
+										</div>
+									</div>
+									<div class="col-2">
+										<div class="card card-block"><center>{{ 'finished'|trans }}</center>
+											{% for task in tasks %}
+												{% if task.status == 'finished' %}
+													<div class="card" >
+														<div class="card-body">
+															<h6 class="card-subtitle mb-2 text-muted">{{ task.name }}</h6>
+															<p class="card-text">{{ task.description }}</p>
+															{% if app.user.id == owner %}
+																<a href="{{ path('app_task_edit', { 'project_id': app.request.get('id'), 'id': task.id }) }}" class="card-link">{{ 'edit'|trans }}</a>
+																<a href="{{ path('app_task_delete', { 'project_id': app.request.get('id'), 'id': task.id }) }}" class="card-link">{{ 'delete'|trans }}</a>
+															{% endif %}
+														</div>
+													</div>
+												{% endif %}
+											{% endfor %}
+										</div>
+									</div>
+									{% if app.user.id == owner %}
+										<div class="col-2">
+											<div class="card card-block"><center>{{ 'archived'|trans }}</center>
+												{% for task in tasks %}
+													{% if task.status == 'archived' %}
+														<div class="card" >
+															<div class="card-body">
+																<h6 class="card-subtitle mb-2 text-muted">{{ task.name }}</h6>
+																<p class="card-text">{{ task.description }}</p>
+																<a href="{{ path('app_task_edit', { 'project_id': app.request.get('id'), 'id': task.id }) }}" class="card-link">{{ 'edit'|trans }}</a>
+																<a href="{{ path('app_task_delete', { 'project_id': app.request.get('id'), 'id': task.id }) }}" class="card-link">{{ 'delete'|trans }}</a>
+															</div>
+														</div>
+													{% endif %}
+												{% endfor %}
+											</div>
+										</div>
+									{% endif %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+        {# end datatable #}
+    </div>
+{% endblock %}

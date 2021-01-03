@@ -1,0 +1,99 @@
+.contact_table{
+
+    th{
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 26px;
+        color: #000000;
+        border: none;
+    }
+
+    td{
+        font-family: "Lato" , sans-serif;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 24px;
+        border: none;
+
+        .email_row{
+            font-size: 22px;
+            line-height: 26px;
+
+        }
+
+        a{
+            color: #000000;
+            font-family: "Lato" , sans-serif;
+        }
+    }
+
+    span{
+        margin-right: 36px;
+
+        @include breakpoint(tablet){
+            margin-right: 20px;      
+        }
+
+        img{
+            @include breakpoint(mobile){
+                max-width: 13px;    
+            }
+        }
+    }
+
+    tbody{
+        @include breakpoint(tablet){
+            display: flex;
+            flex-direction: column;        
+        }
+
+        tr{
+            @include breakpoint(tablet){
+                display: grid;      
+                grid-template-columns: auto auto;     
+                border-bottom: 0.2px solid rgba(104, 104, 104, 0.5);
+                margin-bottom: 30px;
+            }
+
+            @include breakpoint(mobile){
+                grid-template-columns: auto;
+                margin-bottom: 19px;
+            }
+
+            &:last-child{
+                @include breakpoint(tablet){
+                    border: none;
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        th{
+            @include breakpoint(tablet){
+                grid-column: 1/ span 2;    
+                margin-bottom: 37px;
+            }
+
+            @include breakpoint(mobile){
+                grid-column: 1/2; 
+                font-size: 12px;
+                line-height: 14px;
+                margin-bottom: 13px;
+            }
+        }
+
+        td{
+            @include breakpoint(tablet){   
+                margin-bottom: 30px;
+            }
+
+            @include breakpoint(mobile){   
+                font-size: 12px;
+                line-height: 14px;
+                margin-bottom: 13px;
+            }
+            
+        }
+
+    }
+}

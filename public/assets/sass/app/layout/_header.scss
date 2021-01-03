@@ -1,0 +1,439 @@
+.navbar{
+    font-family: 'Raleway', sans-serif;
+    position: relative;
+   
+    .logo{
+        img{
+            @include breakpoint(tablet){
+                width: auto;
+                max-height: 100px;
+            }
+
+            @include breakpoint(mobile){
+                max-width: 70px;
+             }
+        }
+    }
+
+    @include breakpoint(tablet){
+        height: 134px;
+    }
+
+    @include breakpoint(mobile){
+        height: 69px;
+    }
+}
+
+.navbar-header{
+    @include breakpoint(tablet){
+        position: initial;
+        transform: translate3d(0, 0, 0) !important;
+    }
+}
+
+.container-fluid{
+    padding: 23px 40px 24px 60px;
+
+    @include breakpoint(mobile){
+        padding: 9px 0 7px;
+    }
+}
+
+.nav-item{
+    margin-right: 50px !important;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    width: 127px;
+
+    @include breakpoint(tablet){
+        margin-right: 10px !important;
+    }
+
+    @include breakpoint(mobile){
+        margin-right: 0 !important;
+        width: 50px;
+    }
+
+    img,svg{
+        height: 35px;
+        margin-bottom: 17px;
+
+        @include breakpoint(mobile){
+            height: 16px;
+            margin-bottom: 5px;
+        }
+    }
+
+    &.current{
+        svg{
+            path{
+                fill: $base-green;
+            }
+        }
+
+        a{
+            color: $base-green !important;
+        }
+
+        .nav-link{
+            background-color: #ffffff !important;
+        }
+
+        
+    }
+
+    .nav-link{
+        font-weight: 600 !important;
+        font-size: 15px !important;
+        line-height: 18px !important;
+        color: $base-blue !important;
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        font-family: 'Raleway', sans-serif;
+        letter-spacing: initial !important;
+
+        @include breakpoint(mobile){
+            font-weight: 500 !important;
+            font-size: 10px !important;
+            line-height: 11px !important;  
+            padding: 5px !important;              
+        }
+    }
+}
+
+
+.container-right{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all .2s ease-out;
+
+    .lang_switcher{
+        font-weight: bold;
+        font-size: 25px;
+        line-height: 29px;
+
+        a{
+            color: $base-grey;
+
+            &:hover{
+                text-decoration: none;
+            }
+        }
+
+        @include breakpoint(mobile){
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 15px;              
+        }
+
+        span{
+            width: 17px;
+            height: 12px;
+
+            img{
+                @include breakpoint(mobile){
+                    width: 9px;
+                    height: 6px;
+                }
+            }
+
+        }
+    }
+}
+
+.profil_img{
+    @include breakpoint(tablet){
+        margin-left: 300px;
+    }
+
+    @include breakpoint(mobile){
+        margin-left: 108px;
+    }
+
+    img{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+
+        @include breakpoint(mobile){
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    &.current img{
+        border: 2px solid #00D1D1;
+    }
+}
+
+
+.login-nav-container{
+    padding-left: 167px;
+
+    img {
+        @include breakpoint(mobile){
+            max-width: 95px !important;
+        }
+    }
+
+    @include breakpoint(tablet){
+        justify-content: center !important;
+    }
+}
+
+// burger menu
+
+/* menu */
+
+.header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+  }
+  
+  /* menu icon */
+  
+.header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    padding: 23px 9px;
+    position: relative;
+    user-select: none;
+    margin-left: 0;
+}
+  
+.header .menu-icon .navicon {
+    background: $base-blue;
+    display: block;
+    height: 3px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 40px;
+
+    @include breakpoint(mobile){
+        width: 28px;
+        height: 1.75px;
+    }
+
+}
+  
+  .header .menu-icon .navicon:before,
+  .header .menu-icon .navicon:after {
+    background: $base-blue;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    
+  }
+.header .menu-icon .navicon:before {
+    top: 10px;
+    width: 80%;
+    right: 0;
+
+    @include breakpoint(mobile){
+        top: 5px;
+        width: 19.25px;
+    }
+}
+  
+.header .menu-icon .navicon:after {
+    top: -10px;
+    width: 100%;
+
+    @include breakpoint(mobile){
+        top: -5px;
+    }
+}
+  
+  /* menu btn */
+  
+  .header .menu-btn {
+    display: none;
+  }
+  
+  .header .menu-btn:checked ~ .menu {
+    max-height: 240px;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+    width: 100%;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+  }
+
+  /* 48em = 768px */
+
+@media (min-width: 1025px) {
+    .header li {
+      float: left;
+    }
+    .header li a {
+      padding: 20px 30px;
+    }
+    .header .menu {
+      clear: none;
+      float: right;
+      max-height: none;
+    }
+    .header .menu-icon {
+      display: none;
+    }
+  }
+
+
+  .header .menu{
+    @include breakpoint(tablet){
+        display: none;
+    }
+  }
+
+#burger_menu{
+    display: none;
+    transition: all .2s ease-out;
+
+    ul{
+        text-decoration: none;
+    }
+}
+
+#burger_menu.collapsed{
+    @include breakpoint(tablet){
+        display: flex;
+        flex-direction: column !important;
+        clear: none;
+        float: left;
+        max-height: none;
+        background-color: #ffffff;
+    }
+
+    ul{
+        flex-direction: column !important;
+        align-items: center;
+
+        li{
+            .nav-link{
+                display: flex !important;
+                flex-direction: column;
+                align-items: center;
+                color: $base-blue;
+
+                @include breakpoint(mobile){
+                    font-weight: 500 !important;
+                    font-size: 14px !important;
+                    line-height: 17px !important;  
+                    padding: 5px !important;              
+                }
+
+                img,svg{
+                    @include breakpoint(mobile){
+                        height: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#burger_menu.collapsed{
+    @include breakpoint(tablet){
+        justify-content: flex-start;
+        transition: transform .25s ease-in-out;
+        -webkit-transition: -webkit-transform .25s ease-in-out;
+    }
+}
+
+.collapsed{
+    position: absolute;
+    z-index: 9;
+    width: 100%;
+    height: 100vh;
+    top: 131px;
+    left: 0;
+    background-color: #ffffff !important;
+    padding-top: 85px;
+    overflow: hidden;
+
+    @include breakpoint(mobile){
+        top: 67px;
+        padding-top: 43px;
+    }
+}
+
+#nav_list{
+    position: relative;
+}
+
+.burger_footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 9px;
+    position: fixed;
+    bottom: -84vh;
+    width: 100%;
+    padding: 0 40px;
+
+    @include breakpoint(mobile){
+        bottom: -88vh;
+        padding: 0 10px;
+    }
+
+    @include breakpoint(mobile-s){
+        bottom: -85vh;
+    }
+
+    img{
+        width: 62px;
+    }
+
+    p{
+        font-size: 9px;
+        margin-bottom: 0;
+    }
+
+    a{
+        color: $base-grey;
+    }
+
+}
+
+.navbar-expand-lg>.container-fluid{
+    transition: all .2s ease-out;
+
+    @include breakpoint(tablet){
+        padding-right: 20px;
+    }
+
+    @include breakpoint(mobile){
+        padding-right: 0;
+    }
+}
+
+.navbar-nav{
+    transition: all .2s ease-out;
+
+    .nav-item{
+        transition: transform .3s ease-in-out;
+
+        @include breakpoint(mobile){
+            margin-bottom: 13px;
+        }
+    }
+}

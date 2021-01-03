@@ -1,0 +1,68 @@
+footer{
+    display: flex;
+    background-color: #ffffff;
+    padding: 55px 0;
+    justify-content: space-around;
+    align-items: center;
+
+    @include breakpoint(tablet){
+        padding: 55px 0 10px;
+    }
+
+    a{
+        font-weight: normal;
+        font-size: 21px;
+        line-height: 25px;
+        color: $base-grey;
+
+        &:hover{
+            text-decoration: none;
+            color: $base-green;
+        }
+
+        @include breakpoint(tablet){
+            font-size: 15px;
+            line-height: 18px;
+        }
+
+        @include breakpoint(mobile){
+            font-size: 10px;
+            line-height: 12px;
+        }
+    }
+
+    p{
+        @include breakpoint(tablet){
+            font-size: 12px;
+            line-height: 14px;
+        }
+
+        @include breakpoint(mobile){
+            font-size: 7px;
+            line-height: 8px;
+        }
+    }
+
+    img{
+        @include breakpoint(tablet){
+            max-width: 224px;
+        }
+
+        @include breakpoint(mobile){
+            max-width: 120px;
+        }
+    }
+
+    div:last-child{
+        img{
+            @include breakpoint(tablet){
+                max-width: 117px;
+            }
+
+            @include breakpoint(mobile){
+                max-width: 60px;
+            }
+        }
+    }
+   
+}

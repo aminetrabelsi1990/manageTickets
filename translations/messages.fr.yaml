@@ -1,0 +1,87 @@
+administrator: Administrateur
+administrators: Administrateurs
+user: Utilisateur
+users: Utilisateurs
+dashboard: Tableau de bord
+First name: Prénom
+Last name: Nom
+Password: Mot de passe
+Repeat Password: Répéter le mot de passe
+language_preferences: Préférences linguistiques
+Register: S'inscrire
+sign_in_to_admin: Se connecter
+Les informations que vous avez fournies ne sont pas bonnes.: Les informations que vous avez fournies ne sont pas bonnes.
+Log in: S'identifier
+forget_password: Mot de passe oublié
+Send email: Envoyer un e-mail
+Please enter your email: Veuillez entrer votre email
+Recovery password: Récupération mon mot de passe 
+No data available in the table: Aucune donnée disponible dans le tableau
+search: Chercher
+show: Afficher
+entries: entrées
+showing: Affichage de 0 à 0 sur 0 entrées
+showing_info: Affichage
+First: Première
+Last: Dernière
+Next: Prochaine
+previous: Précédente
+project_list: Liste des projets
+manage_projects: Gestion des  projets
+Project: Projet
+Projects: Projets
+list: Liste
+add_project: Ajouter projet
+Name: Nom
+action: Action
+create_project: Créer un projet
+New: Nouvelle
+create: Créer
+Cancel: Annuler
+project_created: Projet Créer
+edit_project: Modifier projet
+edit: Modifier
+project_edited: Projet modifié
+project_deleted: Projet supprimé
+remove: supprimé
+Collaborater: Colloborateur
+Please enter email: Veuillez entrer un email
+to: à
+of: de
+owner: Propriétaire
+Role: Rôle
+Profil updated: Profil mis à jour
+my_profile: Mon profile
+edit_profil: Modifier Profil
+user_list: Liste des utilisateurs
+manage_users: Gestion des utilisateurs
+isDeleted: Est Supprimer
+createdAt: Créé à
+updatedAt: Mis à jour à
+user_deleted: Utilisateurs Supprimer
+admin_list: Liste administrateur 
+manage_admins: Gestions des administrateurs
+add_admin: Ajouter Administrateur
+create_admin: Créer Administrateur
+admin_created: Administrateur Créer
+edit_admin: Modifier administrateur
+admin_updated: Administrateur mis à jour
+admin_deleted: Administrateur Supprimer
+task_list: Liste de tâches
+manage_tasks: Gestion des tâches
+task: Tâche
+add_task: Ajouter une Tâche
+Description: Description
+Status: Statut
+tasks: Tâches
+select project: Sélectionnez un projet
+rough draft: Brouillon
+waiting: Attendre
+in progress: En cours
+in validation: En validation
+finished: Finie
+archived: Archivé
+edit_task: Modifier une Tâche
+assigned: Attribué
+create_task: Créer une Tâche
+delete: Effacer

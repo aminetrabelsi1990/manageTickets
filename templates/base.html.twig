@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" href="{{ asset('assets/img/favicon.ico') }}" type="image/x-icon"/>
+    <!-- Fonts and icons -->
+    <script src="{{ asset('assets/js/plugin/webfont/webfont.min.js') }}"></script>
+    <script>
+        WebFont.load({
+            google: {"families": ["Montserrat:100,200,300,400,500,600,700,800,900"]},
+            custom: {"families": ["Flaticon", "LineAwesome"], urls: ['{{ asset('assets/css/fonts.css') }}']},
+            active: function () {
+                sessionStorage.fonts = true;
+            }
+        });
+    </script>
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/ready.min.css') }}">
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link rel="stylesheet" href="{{ asset('assets/css/demo.css') }}">
+</head>
+<body>
+{% block body %}{% endblock %}
+
+
+
+{% block javascripts %}
+    <!--   Core JS Files   -->
+
+    <script src="{{ asset('assets/js/core/jquery.3.2.1.min.js') }}"></script>
+    <script src="{{ asset('assets/js/core/popper.min.js') }}"></script>
+    <script src="{{ asset('assets/js/core/bootstrap.min.js') }}"></script>
+    <!-- jQuery UI -->
+    <script src="{{ asset('assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js') }}"></script>
+    <script src="{{ asset('assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js') }}"></script>
+    <!-- jQuery Scrollbar -->
+    <script src="{{ asset('assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js') }}"></script>
+    <!-- Bootstrap Toggle -->
+    <script src="{{ asset('assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js') }}"></script>
+    <!-- Dropzone -->
+    <script src="{{ asset('assets/js/plugin/dropzone/dropzone.min.js') }}"></script>
+    <!-- Bootstrap Tagsinput -->
+    <script src="{{ asset('assets/js/plugin/bootstrap-tagsinput/bootstrap-tagsinput.min.js') }}"></script>
+    <!-- Bootstrap Wizard -->
+    <script src="{{ asset('assets/js/plugin/bootstrap-wizard/bootstrapwizard.js') }}"></script>
+    <!-- jQuery Validation -->
+    <script src="{{ asset('assets/js/plugin/jquery.validate/jquery.validate.min.js') }}"></script>
+    <!-- Summernote -->
+    <script src="{{ asset('assets/js/plugin/summernote/summernote-bs4.min.js') }}"></script>
+    <!-- Select2 -->
+    <script src="{{ asset('assets/js/plugin/select2/select2.full.min.js') }}"></script>
+    <!-- Sweet Alert -->
+    <script src="{{ asset('assets/js/plugin/sweetalert/sweetalert.min.js') }}"></script>
+    <!-- Ready Pro JS -->
+    <script src="{{ asset('assets/js/ready.min.js') }}"></script>
+    <!-- Datatable JS -->
+    <script src="{{ asset('assets/js/plugin/datatables/datatables.min.js') }}"></script>
+
+    <script>
+
+        function changeProject() {
+            var myURL = window.location.pathname;
+            var lang = '';
+            if (myURL.search('fr') > 0) {
+                lang = 'fr/';
+            }
+            if ($("#selectProject option:selected").val() != "null") {
+                window.location.replace('/app/' + lang + 'task/'  + $("#selectProject option:selected").val());
+            }         
+        }
+
+        $('#add-row').DataTable({
+             "language": {
+                "sEmptyTable": "{{ 'No data available in the table'|trans }}",
+                "search": "{{ 'search'|trans }}:",
+                "lengthMenu": "{{ 'show'|trans }} _MENU_ {{ 'entries'|trans }}",
+                "info":  "{{ 'showing_info'|trans }} _START_ {{ 'to'|trans }} _END_ {{ 'of'|trans }} _TOTAL_ {{ 'entries'|trans }}",
+                "infoEmpty":  "{{ 'showing'|trans }}",
+                "paginate": {
+                    "first": "{{ 'First'|trans }}",
+                    "last": "{{'Last'|trans }}",
+                    "next": "{{ 'Next'|trans }}",
+                    "previous": "{{ 'previous'|trans }}"
+                },
+
+            }
+        });
+        
+    </script>
+
+{% endblock %}
+</body>
+</html>

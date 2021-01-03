@@ -1,0 +1,256 @@
+.login_wrapper{
+    padding: 100px 180px;
+    display: grid;
+    grid-template-columns: auto auto;
+
+    @include breakpoint(tablet){
+        padding: 90px 40px;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+    }
+
+    @include breakpoint(mobile){
+        padding: 13px 10px;
+    }
+
+    .login_header{
+        font-weight: 800;
+        font-size: 29px;
+        line-height: 34px;
+        text-transform: uppercase;
+        color: $base-grey;
+        margin-bottom: 17px;
+
+        @include breakpoint(tablet){
+            font-size: 28px;
+            line-height: 33px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        @include breakpoint(mobile){
+            font-size: 19px;
+            line-height: 29px;
+            margin-bottom: 3px;
+        }
+    
+    }
+
+    .login_intro{
+        font-family: 'Lato', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 27.5px;
+        line-height: 33px;
+        color: $base-grey;
+
+        @include breakpoint(tablet){
+            font-size: 25px;
+            line-height: 30px;
+            text-align: center;
+
+            @include breakpoint(mobile){
+                font-size: 14px;
+                line-height: 29px;
+            }
+        }
+    }
+
+    .non_inscrit{
+        margin-top: -30px;
+        order: 3;
+
+        @include breakpoint(tablet){
+            margin-top: 0;
+        }
+
+        @include breakpoint(mobile){
+            margin: 14px auto 0;
+        }
+
+        a{
+            color: $base-blue;
+            text-decoration: underline;
+
+            @include breakpoint(mobile){
+                font-size: 12px;
+                line-height: 14px;
+                text-align: center;
+                margin: 0 30px;
+            }
+            
+            &:hover{
+                color: $base-green;
+            }
+        }
+
+        p{
+            @include breakpoint(mobile){
+                text-align: center;
+            }
+        }
+    }
+
+    .lang{
+        margin-top: -20px;
+        order: 4;
+
+        @include breakpoint(tablet){
+            margin-top: 101px;
+            justify-content: center;
+
+        }
+
+        @include breakpoint(mobile){
+            margin-top: 40px;
+            align-items: baseline;
+        }
+
+        p{
+            margin-bottom: 0;
+            margin-top: 3px;
+
+            @include breakpoint(mobile){
+                
+                text-align: center;
+            }
+        }
+    }
+
+    .login_form{
+        padding-left: 140px;
+        order: 2;
+        grid-column: 2;
+        grid-row: 1 / span 2;
+
+        @include breakpoint(tablet){
+            padding-left: 0;
+            grid-column: 1;
+            grid-row: 2;
+            margin: 90px auto 60px;
+        }
+
+        @include breakpoint(mobile){
+            margin: 40px auto 30px;  
+        }
+
+        @include breakpoint(mobile-s){
+            margin: 3px auto 30px;
+            
+        }
+
+        .form_group{
+            margin-bottom: 63px;
+            margin-right: 0;
+            width: 323px;
+
+            @include breakpoint(tablet){
+                margin-bottom: 30px;
+                width: 687px;
+            }
+
+            @include breakpoint(tablet){
+                width: 323px;
+            }
+
+            @include breakpoint(mobile-s){
+                width: 223px;
+                margin: 30px auto;
+            }
+
+            .input_form{
+                @include breakpoint(tablet){
+                    margin-bottom: 0;
+                    width: 633px;
+                }
+
+                @include breakpoint(mobile){
+                    width: 235px;
+                }
+
+                @include breakpoint(mobile-s){
+                    width: 214px;
+                }
+            }
+        }
+        
+        .button{
+            @include breakpoint(tablet){
+                text-align: center;
+            }
+        }
+
+        &.recovery_login{
+            @include breakpoint(mobile){
+                margin-top: 38px;
+            }
+        }
+
+        &.define_password{
+            margin-top: 68px;
+
+            @include breakpoint(tablet){
+                margin-top: 0;
+            }
+
+            .toggle-password-icon{
+                top: 20%;
+            }
+        }
+    }
+}
+
+.lang_switcher{
+    width: 38px;
+    border: none;
+    margin-left: 20px;
+
+    a{
+        color: $base-grey;
+        font-weight: bold;
+
+        &:hover{
+            text-decoration: none;
+            color: $base-green;
+        }
+    }
+
+    @include breakpoint(mobile){
+        font-size: 14px;
+        line-height: 14px;
+    }
+}
+
+.loggedin{
+    font-size: 12px;
+
+    @include breakpoint(mobile){
+        font-size: 9px;
+    }
+}
+
+.forgot_password_link{
+    margin-left: .5rem ;
+    
+    @include breakpoint(tablet){
+        text-align: center;
+        margin-left: 0;
+    }
+
+    @include breakpoint(mobile){
+        font-size: 12px;
+    }
+
+    a:hover{
+        color: $base-green;   
+        text-decoration: none;
+    }
+}
+
+.reset_password{
+    .toggle-password-icon{
+        top: 24%;
+    }
+}
+
+

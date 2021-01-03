@@ -1,0 +1,87 @@
+administrator: Administrator
+administrators: Administrators
+user: User
+users: Users
+dashboard: Dashboard
+First name: First name
+Last name: Last name
+Password: Password
+Repeat Password: Repeat Password
+language_preferences: Language preferences
+Register: Register
+sign_in_to_admin: Sign in
+Les informations que vous avez fournies ne sont pas bonnes.: The information you have provided is not correct.
+Log in: Log in
+forget_password: Forget password
+Send email: Send email
+Please enter your email: Please enter your email
+Recovery password: Recovery password
+No data available in the table: No data available in the table
+search: Search
+show: Show
+entries: entries
+showing: Showing 0 to 0 of 0 entries
+showing_info: Showing
+First: First
+Last: Last
+Next: Next
+previous: Previous
+project_list: Project List
+manage_projects: Manage projects
+Project: Project
+Projects: Projects
+list: List
+add_project: Add project
+Name: Name
+action: Action
+create_project: Create Project
+New: New
+create: Create
+Cancel: Cancel
+project_created: Project created
+edit_project: Edit project
+edit: Edit
+project_edited: Project edited
+project_deleted: Project deleted
+remove: remove
+Collaborater: Collaborater
+Please enter email: Please enter email
+to: to
+of: of
+owner: Owner
+Role: Role
+Profil updated: Profil updated
+my_profile: My profile
+edit_profil: Edit Profil
+user_list: User list
+manage_users: Manage Users
+isDeleted: Is Deleted
+createdAt: Created At
+updatedAt: Updated At
+user_deleted: User deleted
+admin_list: Admin list
+manage_admins: Manage admins
+add_admin: Add admin
+create_admin: Create admin
+admin_created: Admin created
+edit_admin: Edit admin
+admin_updated: Admin updated
+admin_deleted: Admin deleted
+task_list: Task list
+manage_tasks: Manage tasks
+task: Task
+add_task: Add task
+Description: Description
+Status: Status
+tasks: Tasks
+select project: Select project
+rough draft: Rough draft
+waiting: Waiting
+in progress: In progress
+in validation: In validation
+finished: Finished
+archived: Archived
+edit_task: Edit task
+assigned: Assigned
+create_task: Create task
+delete: Delete
